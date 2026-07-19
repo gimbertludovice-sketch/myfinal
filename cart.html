@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Cart — LUDOVICE Kitchen &amp; Table</title>
+<link rel="icon" href="img/logo.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav__row">
+    <a href="index.html" class="nav__brand">
+      <img src="img/logo.png" alt="LUDOVICE logo">
+      <span class="nav__brand-text"><b>LUDOVICE</b><span>Kitchen &amp; Table</span></span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Menu</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html">Login</a>
+    </nav>
+    <div class="nav__actions">
+      <a href="cart.html" class="nav__cart active" aria-label="View cart" style="border-color:var(--orange);">🛒<span class="nav__cart-count" data-cart-count>0</span></a>
+      <button class="nav__toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="page-header">
+  <div class="container">
+    <p class="eyebrow">Step 1 of 2</p>
+    <h1 style="color:#fff;">Your Cart</h1>
+    <p class="breadcrumb"><a href="index.html">Home</a> / Cart</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="stepper">
+      <div class="stepper__step active"><span class="stepper__num">1</span><span>Cart</span></div>
+      <div class="stepper__line"></div>
+      <div class="stepper__step"><span class="stepper__num">2</span><span>Checkout</span></div>
+      <div class="stepper__line"></div>
+      <div class="stepper__step"><span class="stepper__num">3</span><span>Confirmation</span></div>
+    </div>
+
+    <div id="cart-layout" style="display:grid;grid-template-columns:1.6fr 1fr;gap:40px;align-items:start;">
+      <div id="cart-items"></div>
+
+      <aside class="ticket">
+        <h3 style="margin-bottom:16px;">Order Summary</h3>
+        <div id="summary-rows"></div>
+        <div class="ticket-row total"><span>Total</span><span id="summary-total">₱0</span></div>
+        <div style="padding:22px 0;">
+          <a href="checkout.html" class="btn btn-primary btn-block" id="checkout-btn">Proceed to Checkout</a>
+          <a href="products.html" class="btn btn-outline btn-block" style="margin-top:12px;">Continue Browsing</a>
+        </div>
+        <div class="ticket__edge"></div>
+      </aside>
+    </div>
+
+    <div id="empty-state" style="display:none;text-align:center;padding:70px 0;">
+      <p style="font-size:3rem;">🍽️</p>
+      <h2>Your cart is empty</h2>
+      <p style="margin:12px 0 26px;">Looks like you haven't picked a dish yet — 600 of them are waiting.</p>
+      <a href="products.html" class="btn btn-primary">Browse the Menu</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" style="padding-top:40px;">
+  <div class="container">
+    <div class="footer__bottom" style="border-top:1px solid var(--ink-line);padding-top:24px;">
+      <span>© <span data-year></span> LUDOVICE Kitchen &amp; Table.</span>
+      <span><a href="about.html">About</a> · <a href="contact.html">Contact</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  function renderCart(){
+    const items = Cart.read();
+    const layout = document.getElementById('cart-layout');
+    const empty = document.getElementById('empty-state');
+    const wrap = document.getElementById('cart-items');
+    const rows = document.getElementById('summary-rows');
+    const total = document.getElementById('summary-total');
+    const checkoutBtn = document.getElementById('checkout-btn');
+
+    if(!items.length){
+      layout.style.display = 'none';
+      empty.style.display = 'block';
+      return;
+    }
+    layout.style.display = 'grid';
+    empty.style.display = 'none';
+
+    wrap.innerHTML = items.map(i => `
+      <div class="card" style="display:flex;gap:18px;padding:18px;margin-bottom:16px;align-items:center;">
+        <img src="${i.img}" alt="${i.name}" style="width:96px;height:96px;object-fit:cover;border-radius:var(--radius-sm);">
+        <div style="flex:1;">
+          <span class="badge-soft" style="margin-bottom:6px;">${i.category}</span>
+          <h3 style="font-size:1.05rem;">${i.name}</h3>
+          <span class="price">${money(i.price)}</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <button class="btn btn-outline btn-sm" data-dec="${i.id}" aria-label="Decrease quantity">−</button>
+          <span style="font-family:var(--f-mono);min-width:20px;text-align:center;">${i.qty}</span>
+          <button class="btn btn-outline btn-sm" data-inc="${i.id}" aria-label="Increase quantity">+</button>
+        </div>
+        <button data-remove="${i.id}" aria-label="Remove item" style="background:none;border:none;color:var(--alert);font-size:1.2rem;">🗑</button>
+      </div>`).join('');
+
+    rows.innerHTML = items.map(i => `<div class="ticket-row"><span>${i.name} × ${i.qty}</span><span>${money(i.price * i.qty)}</span></div>`).join('');
+    total.textContent = money(Cart.subtotal());
+    checkoutBtn.textContent = `Proceed to Checkout (${Cart.count()})`;
+
+    wrap.querySelectorAll('[data-inc]').forEach(b => b.addEventListener('click', () => {
+      const it = items.find(i => i.id === Number(b.dataset.inc));
+      Cart.setQty(it.id, it.qty + 1); renderCart();
+    }));
+    wrap.querySelectorAll('[data-dec]').forEach(b => b.addEventListener('click', () => {
+      const it = items.find(i => i.id === Number(b.dataset.dec));
+      if(it.qty <= 1){ Cart.remove(it.id); } else { Cart.setQty(it.id, it.qty - 1); }
+      renderCart();
+    }));
+    wrap.querySelectorAll('[data-remove]').forEach(b => b.addEventListener('click', () => {
+      Cart.remove(Number(b.dataset.remove)); renderCart();
+    }));
+  }
+  renderCart();
+</script>
+</body>
+</html>

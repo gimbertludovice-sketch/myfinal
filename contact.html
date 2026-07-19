@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — LUDOVICE Kitchen &amp; Table</title>
+<link rel="icon" href="img/logo.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav__row">
+    <a href="index.html" class="nav__brand">
+      <img src="img/logo.png" alt="LUDOVICE logo">
+      <span class="nav__brand-text"><b>LUDOVICE</b><span>Kitchen &amp; Table</span></span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Menu</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="login.html">Login</a>
+    </nav>
+    <div class="nav__actions">
+      <a href="cart.html" class="nav__cart" aria-label="View cart">🛒<span class="nav__cart-count" data-cart-count>0</span></a>
+      <button class="nav__toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="page-header">
+  <div class="container">
+    <p class="eyebrow">Get In Touch</p>
+    <h1 style="color:#fff;">We'd love to hear from you.</h1>
+    <p class="breadcrumb"><a href="index.html">Home</a> / Contact Us</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="display:grid;grid-template-columns:.85fr 1.15fr;gap:50px;align-items:start;">
+
+    <div class="reveal">
+      <h2 style="margin-bottom:20px;">Contact Information</h2>
+      <div class="card" style="padding:26px;margin-bottom:18px;display:flex;gap:16px;align-items:flex-start;">
+        <span style="font-size:1.4rem;">📍</span>
+        <div><b>Address</b><p>Doña Aurora St, Malamig, Biñan City, Laguna</p></div>
+      </div>
+      <div class="card" style="padding:26px;margin-bottom:18px;display:flex;gap:16px;align-items:flex-start;">
+        <span style="font-size:1.4rem;">📞</span>
+        <div><b>Phone</b><p>(63) 954 361 8684</p></div>
+      </div>
+      <div class="card" style="padding:26px;margin-bottom:18px;display:flex;gap:16px;align-items:flex-start;">
+        <span style="font-size:1.4rem;">✉️</span>
+        <div><b>Email</b><p>gimbertludovice@student.trimexcolleges.edu.ph</p></div>
+      </div>
+
+      <h3 style="margin:34px 0 16px;">Business Hours</h3>
+      <div class="card" style="padding:0;overflow:hidden;">
+        <div class="ticket-row" style="padding:14px 22px;"><span>Monday – Friday</span><span>10:00 AM – 10:00 PM</span></div>
+        <div class="ticket-row" style="padding:14px 22px;"><span>Saturday – Sunday</span><span>9:00 AM – 11:00 PM</span></div>
+        <div class="ticket-row" style="padding:14px 22px;border-bottom:none;"><span>Public Holidays</span><span>8:00 AM – 8:00 PM</span></div>
+      </div>
+
+      <h3 style="margin: 35px 0 16px;">Follow Us</h3>
+      <div class="footer__social" style="--x:0;">
+        <a href="#" style="border-color:var(--border);color:var(--ink);">f</a>
+        <a href="#" style="border-color:var(--border);color:var(--ink);"> LinkedIn</a>
+        <a href="#" style="border-color:var(--border);color:var(--ink);">Twitter</a>
+      </div>
+    </div>
+
+    <div class="form-card reveal">
+      <h2>Send us a message</h2>
+      <p style="margin-bottom:26px;">Questions, catering requests, or feedback — we read every message.</p>
+      <form id="contact-form" novalidate>
+        <div class="field-row">
+          <div class="field">
+            <label for="c-name">Full Name</label>
+            <input type="text" id="c-name" required>
+          </div>
+          <div class="field">
+            <label for="c-email">Email</label>
+            <input type="email" id="c-email" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="c-subject">Subject</label>
+          <select id="c-subject" required>
+            <option value="" disabled selected>What's this about?</option>
+            <option>General Inquiry</option>
+            <option>Order Issue</option>
+            <option>Catering Request</option>
+            <option>Feedback</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="c-message">Message</label>
+          <textarea id="c-message" placeholder="Tell us how we can help…" required minlength="10"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section--tight" style="padding-top:0;">
+  <div class="container">
+    <div class="card reveal" style="overflow:hidden;">
+      <iframe title="LUDOVICE location map" src="https://maps.google.com/maps?q=Biñan%20City&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="360" style="border:0;display:block;" loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand"><img src="img/logo.png" alt="LUDOVICE logo"><b>LUDOVICE</b></div>
+        <p>Premium Filipino fusion kitchen serving Metro Manila since 2026.</p>
+        <div class="footer__social"><a href="#">f</a><a href="#">in</a><a href="#">tt</a></div>
+      </div>
+      <div><h4>Shop</h4><ul><li><a href="products.html">Full Menu</a></li><li><a href="cart.html">Your Cart</a></li><li><a href="checkout.html">Checkout</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li><li><a href="login.html">Login</a></li></ul></div>
+      <div><h4>Visit Us</h4><ul><li>Doña Aurora St, Malamig, Biñan City, Laguna</li><li>gimbertludovice@student.trimexcolleges.edu.ph</li><li>(63) 954 361 8684</li></ul></div>
+    </div>
+    <div class="footer__bottom"><span>© <span data-year></span> LUDOVICE Kitchen &amp; Table.</span><span>Made with 🍚 in the Philippines</span></div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  document.getElementById('contact-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    toast('Message sent! We\'ll reply within one business day.');
+    e.target.reset();
+  });
+</script>
+</body>
+</html>

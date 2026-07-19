@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login — LUDOVICE Kitchen &amp; Table</title>
+<link rel="icon" href="img/logo.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav__row">
+    <a href="index.html" class="nav__brand">
+      <img src="img/logo.png" alt="LUDOVICE logo">
+      <span class="nav__brand-text"><b>LUDOVICE</b><span>Kitchen &amp; Table</span></span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Menu</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html" class="active">Login</a>
+    </nav>
+    <div class="nav__actions">
+      <a href="cart.html" class="nav__cart" aria-label="View cart">🛒<span class="nav__cart-count" data-cart-count>0</span></a>
+      <button class="nav__toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="section" style="padding:90px 0;display:flex;justify-content:center;">
+  <div class="container" style="max-width:460px;">
+    <div class="form-card reveal is-visible">
+      <div class="text-center" style="margin-bottom:28px;">
+        <img src="img/logo.png" alt="LUDOVICE logo" style="width:64px;border-radius:50%;margin:0 auto 14px;">
+        <h2>Welcome back</h2>
+        <p>Log in to reorder your favorites.</p>
+      </div>
+
+      <form id="login-form" novalidate>
+        <div class="field">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" placeholder="Your username" required>
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Your password" required minlength="8">
+        </div>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;">
+          <label class="check-item"><input type="checkbox" id="remember" name="remember"> Remember me</label>
+          <a href="#" style="color:var(--orange);font-weight:700;font-size:.88rem;" id="forgot-link">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Login</button>
+      </form>
+
+      <div style="display:flex;align-items:center;gap:14px;margin:26px 0;color:var(--slate-light);font-size:.82rem;">
+        <div style="flex:1;height:1px;background:var(--border);"></div>
+        or continue with
+        <div style="flex:1;height:1px;background:var(--border);"></div>
+      </div>
+
+      <div class="social-row">
+        <button class="social-btn" type="button" aria-label="Continue with Google">G Google</button>
+        <button class="social-btn" type="button" aria-label="Continue with Facebook">f Facebook</button>
+      </div>
+
+      <p class="text-center" style="margin-top:24px;font-size:.9rem;">New to LUDOVICE? <a href="register.html" style="color:var(--orange);font-weight:700;">Create an account</a></p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" style="padding-top:40px;">
+  <div class="container">
+    <div class="footer__bottom" style="border-top:1px solid var(--ink-line);padding-top:24px;">
+      <span>© <span data-year></span> LUDOVICE Kitchen &amp; Table.</span>
+      <span><a href="about.html">About</a> · <a href="contact.html">Contact</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  document.getElementById('login-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    toast('Logged in — redirecting to the menu…');
+    setTimeout(() => location.href = 'products.html', 1200);
+  });
+  document.getElementById('forgot-link').addEventListener('click', (e) => {
+    e.preventDefault();
+    toast('Password reset link sent to your email (design only).');
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create an Account — LUDOVICE Kitchen &amp; Table</title>
+<link rel="icon" href="img/logo.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav__row">
+    <a href="index.html" class="nav__brand">
+      <img src="img/logo.png" alt="LUDOVICE logo">
+      <span class="nav__brand-text"><b>LUDOVICE</b><span>Kitchen &amp; Table</span></span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Menu</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html">Login</a>
+    </nav>
+    <div class="nav__actions">
+      <a href="cart.html" class="nav__cart" aria-label="View cart">🛒<span class="nav__cart-count" data-cart-count>0</span></a>
+      <button class="nav__toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="section" style="padding:70px 0;">
+  <div class="container" style="max-width:1080px;">
+    <div class="form-split">
+
+      <aside class="form-split__aside">
+        <p class="eyebrow" style="color:var(--gold-light);">Join LUDOVICE</p>
+        <h2 style="color:#fff;position:relative;z-index:1;">Your table is<br>always open.</h2>
+        <p style="color:var(--slate-light);margin-top:16px;position:relative;z-index:1;">Create an account to save your delivery address, track past orders, and get first access to new Chef's Specials every week.</p>
+        <div class="plate-frame" style="width:190px;margin-top:36px;position:relative;z-index:1;">
+          <div class="plate-frame__inner"><img src="img/bestpick.png.jpg" alt="Signature platter"></div>
+        </div>
+      </aside>
+
+      <div class="form-split__main">
+        <h2>Create your account</h2>
+        <p style="margin-bottom:28px;">It only takes a minute.</p>
+
+        <form id="register-form" novalidate>
+          <div class="field">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" placeholder="Juan Dela Cruz" required minlength="2">
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="birthday">Birthday</label>
+              <input type="date" id="birthday" name="birthday" required>
+            </div>
+            <div class="field">
+              <label for="gender">Gender</label>
+              <select id="gender" name="gender" required>
+                <option value="" disabled selected>Select one</option>
+                <option>Female</option>
+                <option>Male</option>
+                <option>Non-binary</option>
+                <option>Prefer not to say</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" placeholder="Unit, street, barangay, city" required minlength="5">
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="my@email.com" required>
+            </div>
+            <div class="field">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="09XX XXX XXXX" pattern="[0-9+ ]{7,14}" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Pick a username" required minlength="4">
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" placeholder="At least 8 characters" required minlength="8">
+            </div>
+            <div class="field">
+              <label for="confirm">Confirm Password</label>
+              <input type="password" id="confirm" name="confirm" placeholder="Re-enter password" required minlength="8">
+            </div>
+          </div>
+          <p id="match-hint" class="hint" style="color:var(--alert);font-size:.8rem;display:none;margin:-14px 0 18px;">Passwords do not match.</p>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Create Account</button>
+            <button type="reset" class="btn btn-outline">Reset</button>
+          </div>
+          <p style="margin-top:20px;font-size:.9rem;">Already have an account? <a href="login.html" style="color:var(--orange);font-weight:700;">Log in</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" style="padding-top:40px;">
+  <div class="container">
+    <div class="footer__bottom" style="border-top:1px solid var(--ink-line);padding-top:24px;">
+      <span>© <span data-year></span> LUDOVICE Kitchen &amp; Table.</span>
+      <span><a href="about.html">About</a> · <a href="contact.html">Contact</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  const form = document.getElementById('register-form');
+  const pass = document.getElementById('password');
+  const confirm = document.getElementById('confirm');
+  const hint = document.getElementById('match-hint');
+
+  function checkMatch(){
+    const mismatch = confirm.value && pass.value !== confirm.value;
+    hint.style.display = mismatch ? 'block' : 'none';
+    confirm.setCustomValidity(mismatch ? 'Passwords must match' : '');
+  }
+  pass.addEventListener('input', checkMatch);
+  confirm.addEventListener('input', checkMatch);
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    checkMatch();
+    if(!form.checkValidity()){
+      form.reportValidity();
+      return;
+    }
+    toast('Account created — welcome to LUDOVICE!');
+    setTimeout(() => location.href = 'login.html', 1400);
+  });
+</script>
+</body>
+</html>

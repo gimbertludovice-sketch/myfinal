@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUDOVICE — Premium Filipino Fusion, Delivered</title>
+<meta name="description" content="LUDOVICE Kitchen — 600+ Filipino-fusion dishes crafted daily, ordered online, delivered fresh.">
+<link rel="icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ NAVIGATION ============ -->
+<header class="nav">
+  <div class="nav__row">
+    <a href="index.html" class="nav__brand">
+      <img src="img/logo.png" alt="LUDOVICE logo">
+      <span class="nav__brand-text"><b>LUDOVICE</b><span>Kitchen &amp; Table</span></span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Menu</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html">Login</a>
+    </nav>
+    <div class="nav__actions">
+      <a href="cart.html" class="nav__cart" aria-label="View cart">
+        🛒<span class="nav__cart-count" data-cart-count>0</span>
+      </a>
+      <a href="register.html" class="btn btn-primary btn-sm">Order Now</a>
+      <button class="nav__toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="container hero__row">
+    <div>
+      <p class="eyebrow hero__eyebrow">Filipino Fusion Kitchen · Est. 2026</p>
+      <h1>Real Filipino flavor,<br><em>plated</em> for the modern table.</h1>
+      <p class="lead">From sizzling sisig to Wagyu tomahawk sharers — 600 chef-crafted dishes across appetizers, mains, sides, drinks, desserts, and rotating chef's specials. Order online, pick up, or have it delivered hot.</p>
+      <div class="hero__ctas">
+        <a href="products.html" class="btn btn-primary">Browse the Menu</a>
+        <a href="about.html" class="btn btn-ghost">Our Story</a>
+      </div>
+      <div class="hero__stats">
+        <div class="hero__stat"><b>600+</b><span>Menu Items</span></div>
+        <div class="hero__stat"><b>4.9★</b><span>Average Rating</span></div>
+        <div class="hero__stat"><b>18k+</b><span>Orders Served</span></div>
+      </div>
+    </div>
+    <div class="hero__art">
+      <div class="plate-frame">
+        <div class="plate-frame__inner">
+          <div class="plate-frame__image">
+            <div class="jpeg"><img src="img/bestpick.png.jpg" alt="Higher Pick of Customers"></div>
+          </div>
+        </div>
+      </div>
+      <div class="hero__badge">
+        <span style="font-size:1.6rem;">🔥</span>
+        <div><b>Chef's Special</b><br><span>New drops weekly</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CATEGORY STRIP ============ -->
+<section class="section section--tight section--paper">
+  <div class="container">
+    <div class="section-head section-head--center reveal">
+      <p class="eyebrow" style="justify-content:center;">Explore</p>
+      <h2>Six categories, one kitchen</h2>
+      <p>Every dish is grouped so you find what you're craving fast.</p>
+    </div>
+    <div class="grid grid--3" id="category-strip"></div>
+  </div>
+</section>
+
+<!-- ============ FEATURED PRODUCTS ============ -->
+<section class="section" style="background:var(--cream);">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Popular Right Now</p>
+      <h2>Guest favorites this week</h2>
+      <p>Hand-picked from 600 dishes, based on what diners are actually reordering.</p>
+    </div>
+    <div class="grid grid--4" id="featured-grid"></div>
+    <div class="load-more-wrap">
+      <a href="products.html" class="btn btn-outline">See Full Menu (600+ items)</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY BAND ============ -->
+<section class="section--ink section" style="padding:90px 0;">
+  <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
+    <div class="reveal">
+      <p class="eyebrow" style="color:var(--gold-light);">Why LUDOVICE</p>
+      <h2 style="color:#fff;">Cooked like home. Plated like a celebration.</h2>
+      <p style="color:var(--slate-light);margin-top:18px;">We take the recipes we grew up on — sisig, sinigang, adobo, kare-kare — and plate them with the technique of a tasting menu. Every order is cooked fresh once it's placed, not reheated from a steam tray.</p>
+      <a href="about.html" class="btn btn-ghost mt-lg" style="margin-top:26px;">Meet the Team</a>
+    </div>
+    <div class="grid grid--2" style="gap:20px;">
+      <div class="plate-frame" style="align-self:end;"><div class="plate-frame__inner"><img src="img/sisg plate.jpg" alt="Sisig plate"></div></div>
+      <div class="plate-frame"><div class="plate-frame__inner"><img src="img/lechon plate.png" alt="Lechon plate"></div></div>
+      <div class="plate-frame"><div class="plate-frame__inner"><img src="img/halo halo.jpg" alt="Halo-halo dessert"></div></div>
+      <div class="plate-frame" style="align-self:start;"><div class="plate-frame__inner"><img src="img/adobo.jpg" alt="Adobo plate"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="section section--paper">
+  <div class="container">
+    <div class="section-head section-head--center reveal">
+      <p class="eyebrow" style="justify-content:center;">Testimonials</p>
+      <h2>What diners are saying</h2>
+    </div>
+    <div class="grid grid--3">
+      <article class="card reveal" style="padding:30px;">
+        <p class="stars" style="color:var(--gold);letter-spacing:2px;">★★★★★</p>
+        <p style="margin:14px 0;color:var(--charcoal);">"The Crispy Pata Platter tasted like my lola's cooking, but the plating felt like a five-star restaurant. Delivery was still piping hot."</p>
+        <b style="font-family:var(--f-display);">— Ana R., San Pedro</b>
+      </article>
+      <article class="card reveal delay-1" style="padding:30px;">
+        <p class="stars" style="color:var(--gold);letter-spacing:2px;">★★★★★</p>
+        <p style="margin:14px 0;color:var(--charcoal);">"Ordered the Wagyu Tomahawk Sharer for a birthday. Six of us, one platter, zero leftovers. Worth every peso."</p>
+        <b style="font-family:var(--f-display);">— Marco T., Santa Rosa</b>
+      </article>
+      <article class="card reveal delay-2" style="padding:30px;">
+        <p class="stars" style="color:var(--gold);letter-spacing:2px;">★★★★☆</p>
+        <p style="margin:14px 0;color:var(--charcoal);">"600 items and somehow the checkout still took me two minutes. The chef's specials rotate weekly which keeps it exciting."</p>
+        <b style="font-family:var(--f-display);">— Divine L., Cabuyao</b>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA BAND ============ -->
+<section class="section" style="background:linear-gradient(120deg,var(--orange),var(--orange-deep));text-align:center;">
+  <div class="container">
+    <h2 style="color:#fff;">Hungry yet?</h2>
+    <p style="color:rgba(255,255,255,.85);max-width:520px;margin:14px auto 30px;">Create an account in under a minute and your first order ships with a free dessert.</p>
+    <a href="register.html" class="btn btn-dark">Create Free Account</a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand"><img src="img/logo.png" alt="LUDOVICE logo"><b>LUDOVICE</b></div>
+        <p>Premium Filipino fusion kitchen serving Metro Manila since 2019. 600 dishes, cooked to order.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">in</a>
+          <a href="#" aria-label="TikTok">tt</a>
+        </div>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="products.html">Full Menu</a></li>
+          <li><a href="products.html">Chef's Specials</a></li>
+          <li><a href="cart.html">Your Cart</a></li>
+          <li><a href="checkout.html">Checkout</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="register.html">Register</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit Us</h4>
+        <ul>
+          <li>Doña Aurora St, Malamig, Biñan City, Laguna</li>
+          <li>gimbertludovice@student.trimexcolleges.edu.ph</li>
+          <li>(63) 954 361 8684</li>
+          <li>Open daily 8:00AM – 10:00PM</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© <span data-year></span> LUDOVICE Kitchen &amp; Table. All rights reserved.</span>
+      <span>Made with 🍚 in the Philippines</span>
+    </div>
+  </div>
+</footer>
+
+<script src="data/products.js"></script>
+<script src="js/main.js"></script>
+<script>
+  const catMeta = {
+    appetizers: {icon:'🥟', label:'Appetizers'},
+    mains: {icon:'🍛', label:'Main Courses'},
+    sides: {icon:'🍚', label:'Sides'},
+    desserts: {icon:'🍮', label:'Desserts'},
+    drinks: {icon:'🥤', label:'Drinks'},
+    specials: {icon:'⭐', label:"Chef's Specials"}
+  };
+  const stripEl = document.getElementById('category-strip');
+  Object.keys(catMeta).forEach(key => {
+    const count = LUDOVICE_PRODUCTS.filter(p => p.category === key).length;
+    const c = catMeta[key];
+    stripEl.innerHTML += `
+      <a href="products.html?cat=${key}" class="card reveal" style="padding:32px 26px;display:flex;align-items:center;gap:18px;">
+        <span style="font-size:2.2rem;">${c.icon}</span>
+        <span>
+          <h3 style="margin-bottom:4px;">${c.label}</h3>
+          <span style="font-family:var(--f-mono);font-size:.8rem;color:var(--slate);">${count} items</span>
+        </span>
+      </a>`;
+  });
+
+  const featured = LUDOVICE_PRODUCTS.filter(p => p.popular).slice(0, 8);
+  const grid = document.getElementById('featured-grid');
+  featured.forEach(p => {
+    grid.innerHTML += `
+      <article class="card product-card reveal">
+        <div class="product-card__media">
+          <img src="${p.img}" alt="${p.name}" loading="lazy">
+          <span class="product-card__tag">Popular</span>
+          <span class="product-card__cat">${p.categoryLabel}</span>
+        </div>
+        <div class="product-card__body">
+          <h3>${p.name}</h3>
+          <p>${p.desc}</p>
+          <div class="product-card__rating"><span class="stars">${starString(p.rating)}</span> ${p.rating} (${p.reviews})</div>
+          <div class="product-card__footer">
+            <span class="price">${money(p.price)}</span>
+            <button class="btn btn-primary btn-sm" onclick='Cart.add(${JSON.stringify(p)})'>Buy Now</button>
+          </div>
+        </div>
+      </article>`;
+  });
+</script>
+</body>
+</html>
